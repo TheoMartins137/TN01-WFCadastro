@@ -42,10 +42,9 @@ namespace TN01_WFCadastrar
             p1.NomeCompleto = txt_nome.Text;
             p1.DDDTelefone = mkd_telefone.Text;
             p1.DataNascimento = dtp_datanasc.Value;
-            p1.Escolaridade = cbx_escolaridade.SelectedText;
+            p1.Escolaridade = cbx_escolaridade.SelectedItem?.ToString();
             p1.RendaMensal = Convert.ToDouble(nup_renda.Value);
             
-
             if (rdb_masculino.Checked)
             {
                 p1.Sexo = 'M';
@@ -78,7 +77,7 @@ namespace TN01_WFCadastrar
                 return;
             }
 
-
+            
             Pessoa.ListaPessoas.Add(p1);
 
             MessageBox.Show("Cadastro Realizado Com Sucesso", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
